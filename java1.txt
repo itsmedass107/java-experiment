@@ -1,0 +1,21 @@
+class Activity {
+    String activity;
+    double carbon;
+
+    Activity(String a, double c) {
+        activity = a;
+        carbon = c;
+    }
+
+    void display() {
+        System.out.println("Activity: " + activity);
+        System.out.println("Carbon Emission: " + carbon);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Activity a1 = new Activity("Car Travel", 2.5);
+        a1.display();
+    }
+}

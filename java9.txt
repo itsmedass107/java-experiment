@@ -1,0 +1,26 @@
+import java.util.ArrayList;
+
+public class Main {
+    public static void main(String[] args) {
+
+        ArrayList<Double> emissions = new ArrayList<>();
+
+        emissions.add(25.5);
+        emissions.add(30.5);
+        emissions.add(40.0);
+
+        System.out.println("Carbon Emissions:");
+
+        for (double e : emissions) {
+            System.out.println(e);
+        }
+
+        double total = 0;
+
+        for (double e : emissions) {
+            total += e;
+        }
+
+        System.out.println("Total Emission: " + total);
+    }
+}

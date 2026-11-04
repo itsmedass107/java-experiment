@@ -1,0 +1,23 @@
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class Main {
+    public static void main(String[] args) {
+
+        try {
+            FileWriter fw = new FileWriter("carbon.txt");
+
+            fw.write("Carbon Footprint Report\n");
+            fw.write("Car Emission: 25 kg\n");
+            fw.write("Electricity Emission: 50 kg\n");
+
+            fw.close();
+
+            System.out.println("File Created Successfully");
+        }
+
+        catch (IOException e) {
+            System.out.println("File Error");
+        }
+    }
+}

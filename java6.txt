@@ -1,0 +1,29 @@
+interface Carbon {
+
+    void calculate();
+}
+
+class Electricity implements Carbon {
+
+    public void calculate() {
+        System.out.println("Electricity Emission: 50 kg");
+    }
+}
+
+class Transport implements Carbon {
+
+    public void calculate() {
+        System.out.println("Transport Emission: 30 kg");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        Electricity e = new Electricity();
+        Transport t = new Transport();
+
+        e.calculate();
+        t.calculate();
+    }
+}

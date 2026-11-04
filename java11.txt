@@ -1,0 +1,43 @@
+import java.io.*;
+
+class Carbon implements Serializable {
+
+    String activity;
+    double emission;
+
+    Carbon(String a, double e) {
+        activity = a;
+        emission = e;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        try {
+            Carbon c = new Carbon("Car Travel", 25.5);
+
+            ObjectOutputStream out =
+                new ObjectOutputStream(
+                    new FileOutputStream("carbon.dat"));
+
+            out.writeObject(c);
+            out.close();
+
+            ObjectInputStream in =
+                new ObjectInputStream(
+                    new FileInputStream("carbon.dat"));
+
+            Carbon obj = (Carbon) in.readObject();
+
+            System.out.println("Activity: " + obj.activity);
+            System.out.println("Emission: " + obj.emission);
+
+            in.close();
+        }
+
+        catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+}

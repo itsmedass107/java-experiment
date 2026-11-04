@@ -1,0 +1,24 @@
+class Activity {
+    double emission;
+
+    void setEmission(double e) {
+        emission = e;
+    }
+}
+
+class Transport extends Activity {
+
+    void display() {
+        System.out.println("Transport Emission: " + emission);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        Transport t = new Transport();
+
+        t.setEmission(25.5);
+        t.display();
+    }
+}

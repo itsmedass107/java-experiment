@@ -1,0 +1,36 @@
+class CarbonCalculator {
+
+    public double calculateCarbon(double distance) {
+        return distance * 0.12;
+    }
+
+    public double calculateCarbon(double distance, String vehicle) {
+        return distance * 0.15;
+    }
+
+    public double calculateCarbon(int electricity) {
+        return electricity * 0.5;
+    }
+
+    static void display() {
+        System.out.println("Carbon Footprint Tracker");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        CarbonCalculator.display();
+
+        CarbonCalculator c = new CarbonCalculator();
+
+        System.out.println("Car Emission: " +
+                c.calculateCarbon(10.0));
+
+        System.out.println("Vehicle Emission: " +
+                c.calculateCarbon(10.0, "Car"));
+
+        System.out.println("Electricity Emission: " +
+                c.calculateCarbon(100));
+    }
+}

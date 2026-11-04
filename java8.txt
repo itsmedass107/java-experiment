@@ -1,0 +1,37 @@
+class CarbonThread extends Thread {
+
+    public void run() {
+        for (int i = 1; i <= 5; i++) {
+            System.out.println("Travel Emission: " + (i * 10));
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        CarbonThread t = new CarbonThread();
+
+        t.start();
+    }
+}
+
+class CarbonTask implements Runnable {
+
+    public void run() {
+        for (int i = 1; i <= 5; i++) {
+            System.out.println("Carbon Emission: " + (i * 5));
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        CarbonTask task = new CarbonTask();
+
+        Thread t = new Thread(task);
+
+        t.start();
+    }
+}

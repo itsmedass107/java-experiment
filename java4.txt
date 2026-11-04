@@ -1,0 +1,33 @@
+class Activity {
+
+    void calculate() {
+        System.out.println("General Carbon Emission");
+    }
+}
+
+class Car extends Activity {
+
+    @Override
+    void calculate() {
+        System.out.println("Car Carbon Emission: 25 kg");
+    }
+}
+
+class Bus extends Activity {
+
+    @Override
+    void calculate() {
+        System.out.println("Bus Carbon Emission: 15 kg");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        Car c = new Car();
+        Bus b = new Bus();
+
+        c.calculate();
+        b.calculate();
+    }
+}

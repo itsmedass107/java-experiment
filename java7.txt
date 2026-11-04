@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        try {
+            System.out.print("Enter distance: ");
+            double distance = sc.nextDouble();
+
+            if (distance < 0) {
+                throw new IllegalArgumentException(
+                    "Distance cannot be negative");
+            }
+
+            double emission = distance * 0.12;
+
+            System.out.println("Carbon Emission: " + emission);
+        }
+
+        catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+
+        finally {
+            System.out.println("Calculation Completed");
+            sc.close();
+        }
+    }
+}
